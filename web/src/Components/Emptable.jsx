@@ -149,14 +149,14 @@ const Emptable = () => {
         });
       
 
-      const editMode = (product) => {
+      const editMode = (employee) => {
         setIsEditMode(!isEditMode)
-        setEditingProduct(product)
+        setEditingProduct(employee)
     
-        editFormik.setFieldValue("firstName",product.firstName)
-        editFormik.setFieldValue("lastName", product.lastName)
-        editFormik.setFieldValue("salary", product.salary)
-        editFormik.setFieldValue("email", product.email)
+        editFormik.setFieldValue("firstName",employee.firstName)
+        editFormik.setFieldValue("lastName", employee.lastName)
+        editFormik.setFieldValue("salary", employee.salary)
+        editFormik.setFieldValue("email", employee.email)
        
       }
 
@@ -172,6 +172,12 @@ const Emptable = () => {
           headerName:<b style={{fontWeight:'800'}}>Salary</b> ,
           type: 'number',
           width: 130,
+          renderCell: (params) => {
+      
+            return (
+                <p>{` $${params.row.salary}`}</p>
+            );
+          },
         },
         {
           field: 'date',
@@ -235,7 +241,7 @@ const Emptable = () => {
         <form className='inputf' onSubmit={myFormik.handleSubmit}>
         <input
           id="firstName"
-          placeholder="First Name"
+          placeholder="Enter Employee First Name"
           value={myFormik.values.firstName}
           onChange={myFormik.handleChange}
         />
@@ -249,7 +255,7 @@ const Emptable = () => {
         <br />
         <input
           id="lastName"
-          placeholder="Last Name"
+          placeholder="Enter Employee Last Name"
           value={myFormik.values.lastName}
           onChange={myFormik.handleChange}
         />
@@ -263,7 +269,7 @@ const Emptable = () => {
         <br />
         <input
           id="salary"
-          placeholder="Salary"
+          placeholder="Enter Employee Salary"
           value={myFormik.values.salary}
           onChange={myFormik.handleChange}
           type='number'
@@ -277,7 +283,7 @@ const Emptable = () => {
         <br />
         <input
           id="email"
-          placeholder="Email"
+          placeholder="Enter Employee Email"
           value={myFormik.values.email}
           onChange={myFormik.handleChange}
           type='email'

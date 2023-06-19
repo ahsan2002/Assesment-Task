@@ -106,8 +106,8 @@ app.put('/employee/:id', (req, res) => {
     for (let i = 0; i < employees.length; i++) {
         if (employees[i].id === id) {
 
-            employees[i].name = body.firstName;
-            employees[i].price = body.lastName;
+            employees[i].firstName = body.firstName;
+            employees[i].lastName = body.lastName;
             employees[i].email = body.email;
             employees[i].salary = body.salary;
 
