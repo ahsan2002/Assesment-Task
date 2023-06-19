@@ -1,0 +1,50 @@
+.inputf{
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+    
+  }
+  
+  .inputf input{
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 0;
+    margin: 0;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    text-indent: 20px;   
+    font-size: 15px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    font-family: 'Open Sans', sans-serif;
+    border-bottom: 1px solid black;
+  }
+  
+  .button{
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .button button{
+    padding: 20px 10px;
+    width: 100%;
+    background-color: #2186D4;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .button button:hover{
+    background-color: black;
+  }
+  
