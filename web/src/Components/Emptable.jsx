@@ -15,7 +15,7 @@ const Emptable = () => {
   const handleClose = () => setOpen(false);
   const [isEditMode, setIsEditMode] = useState(false)
   const [editingProduct, setEditingProduct] = useState(null)
-
+  const[loadProduct,setloadProduct]=useState(false)
 
   useEffect(() => {
     const getAllemployees = async () => {
@@ -32,7 +32,7 @@ const Emptable = () => {
 
       getAllemployees();
     
-  }, [])
+  }, [loadProduct])
   
 
     const style = {
@@ -90,6 +90,7 @@ const Emptable = () => {
               console.log("response: ", response.data);
               resetForm();
               setOpen(false)
+              setloadProduct(!loadProduct);
 
     
             })
@@ -140,6 +141,7 @@ const Emptable = () => {
                 console.log("response: ", response.data);
                 resetForm();
                 setIsEditMode(false)
+                setloadProduct(!loadProduct)
       
               })
               .catch(err => {
@@ -200,6 +202,7 @@ const Emptable = () => {
                     try {
                       const response = await axios.delete(`http://localhost:5001/employee/${id}`)
                       console.log("response: ", response.data);
+                      setloadProduct(!loadProduct)
                     } catch (error) {
                       console.log("error in deleting employee", error);
                     }
